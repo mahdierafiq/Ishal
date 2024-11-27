@@ -6,27 +6,72 @@
   <title>Toggle Text with Buttons</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
-      margin: 20px;
-      text-align: center;
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom right, #ffe4e1, #ffccff);
+      color: #4a004e;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
     }
 
     .container {
+      text-align: center;
+      background: #ffffff;
+      border: 3px solid #ff99cc;
+      border-radius: 15px;
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      width: 80%;
       max-width: 600px;
-      margin: 0 auto;
     }
 
+    h1 {
+      font-size: 2rem;
+      color: #ff66b2;
+      margin-bottom: 20px;
+    }
+
+    /* Button styles */
     button {
+      background: #ff66b2;
+      color: #ffffff;
+      border: none;
+      border-radius: 30px;
+      padding: 15px 25px;
       margin: 10px;
-      padding: 10px 20px;
-      font-size: 16px;
+      font-size: 1rem;
       cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     }
 
+    button:hover {
+      background: #ff3385;
+      transform: scale(1.05);
+      box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    /* Paragraph styles */
     p {
-      margin: 10px 0;
-      font-size: 16px;
+      font-size: 1.2rem;
+      margin: 15px 0;
+      padding: 10px;
+      background: #fff0f5;
+      border: 2px solid #ff99cc;
+      border-radius: 10px;
       display: none;
+      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    p.show {
+      display: block;
     }
   </style>
 </head>
