@@ -6,72 +6,32 @@
   <title>Toggle Text with Buttons</title>
   <style>
     body {
-      font-family: 'Arial', sans-serif;
-      background: linear-gradient(to bottom right, #ffe4e1, #ffccff);
-      color: #4a004e;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      text-align: center;
     }
 
     .container {
-      text-align: center;
-      background: #ffffff;
-      border: 3px solid #ff99cc;
-      border-radius: 15px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      padding: 30px;
-      width: 80%;
       max-width: 600px;
+      margin: 0 auto;
     }
 
-    h1 {
-      font-size: 2rem;
-      color: #ff66b2;
-      margin-bottom: 20px;
-    }
-
-    /* Button styles */
     button {
-      background: #ff66b2;
-      color: #ffffff;
-      border: none;
-      border-radius: 30px;
-      padding: 15px 25px;
       margin: 10px;
-      font-size: 1rem;
+      padding: 10px 20px;
+      font-size: 16px;
       cursor: pointer;
-      transition: all 0.3s ease;
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
     }
 
-    button:hover {
-      background: #ff3385;
-      transform: scale(1.05);
-      box-shadow: 0 7px 15px rgba(0, 0, 0, 0.3);
-    }
-
-    button:active {
-      transform: scale(0.95);
-    }
-
-    /* Paragraph styles */
+    /* Ensure text areas don't affect button positions */
     p {
-      font-size: 1.2rem;
-      margin: 15px 0;
-      padding: 10px;
-      background: #fff0f5;
-      border: 2px solid #ff99cc;
-      border-radius: 10px;
+      margin: 10px 0;
+      font-size: 16px;
       display: none;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
     }
 
-    p.show {
-      display: block;
+    .text-container {
+      min-height: 150px; /* Adjust this height as necessary */
     }
   </style>
 </head>
@@ -80,7 +40,14 @@
     <h1>Click a Button to Toggle Text</h1>
 
     <button onclick="toggleText('science')">বিজ্ঞান</button>
-    <p id="science">মাটির উপাদানগুলোর নাম লিখ<br/>
+    <button onclick="toggleText('religion')">ধর্ম</button>
+    <button onclick="toggleText('world')">বিশ্বপরিচয়</button>
+    <button onclick="toggleText('bangla')">বাংলা</button>
+    <button onclick="toggleText('english')">English</button>
+
+    <!-- Fixed-height container for the toggle content -->
+    <div class="text-container">
+      <p id="science">মাটির উপাদানগুলোর নাম লিখ<br/>
         উ:- বালু, কাঁদা, পানি, বায়ু, নুড়িপাথর ও পলি।।<br/><br/>
         
         হিউমাস কাকে বলে?<br/>
@@ -162,11 +129,8 @@
         উত্তর:- আলো একপ্রকার শক্তি।<br/><br/>
         
         সূর্য় থেকে আমরা কী পাই?<br/>
-        উত্তর:- আলো ও তাপ পাই।<br/><br/>
-        </p>
-
-    <button onclick="toggleText('religion')">ধর্ম</button>
-    <p id="religion">প্রশ্ন: কী কী কাজ করলে অন্য ধর্মের লোকের সাথে সুসম্পর্ক গড়ে উঠে?<br/>
+        উত্তর:- আলো ও তাপ পাই।<br/><br/></p>
+      <p id="religion">প্রশ্ন: কী কী কাজ করলে অন্য ধর্মের লোকের সাথে সুসম্পর্ক গড়ে উঠে?<br/>
         উ:--<br/>
          তাদের ধর্মীয় কাজে বাধা দেবনা।<br/>
         তাদের সাথে ভালো আচরণ করব।<br/>
@@ -302,11 +266,8 @@
         ;;;;আমরা হযরত মুহাম্মদ (স:) এর জীবনাদর্শ কীভাবে অনুসরণ করব?<br/>
         উত্তর:- আমার  আচরণে বিনয়ী হবো।<br/>
         অহংকার করব না।<br/>
-        কাউকে অপমান করবনা।<br/><br/>
-        </p>
-
-    <button onclick="toggleText('world')">বিশ্বপরিচয়</button>
-    <p id="world">প্রতিদিন অনুশীলন করব এমন পাঁচটি ভাল কাজ।।রর<br/>
+        কাউকে অপমান করবনা।<br/><br/></p>
+      <p id="world">প্রতিদিন অনুশীলন করব এমন পাঁচটি ভাল কাজ।।রর<br/>
         ক) সত্য কথা বলব<br/>
         খ) শিক্ষকদের কথা মানব<br/>
         গ) সবার সাথে ভালো ব্যবহার করব।<br/>
@@ -478,12 +439,8 @@
         চট্টগ্রামের পশ্চিমে—খুলনা,<br/> 
         চট্টগ্রামের উত্তরে --- কুমিল্লা <br/>
         চট্টগ্রামের দক্ষিনে—বঙ্গোপসাগর।<br/><br/>
-        
-        
         </p>
-
-    <button onclick="toggleText('bangla')">বাংলা</button>
-    <p id="bangla">বাংলাদেশের মুক্তিযুদ্ধ  <br/><br/>
+      <p id="bangla">বাংলাদেশের মুক্তিযুদ্ধ  <br/><br/>
 
         ভূমিকা: ১৯৪৭ সালে ভারত ভাগ হওয়ার পর বাংলাদেশ পাকিস্তানের অংশ হয়ে যায়। ভাষা ও অর্থনৈতিক বৈষম্যের কারণে পূর্ব পাকিস্তানের মানুষ চরম বঞ্চিত হতে থাকে।<br/>
         
@@ -516,11 +473,8 @@
                                         আফিয়া সাহানা (ঈষাল)<br/>
                                         তৃতীয় শ্রেণী<br/>
                                         রোল নং - ৪৪.<br/><br/>
-        
         </p>
-
-    <button onclick="toggleText('english')">English</button>
-    <p id="english">Write a letter to your friend about your family.<br/><br/>
+      <p id="english">Write a letter to your friend about your family.<br/><br/>
 
         Dear friend,<br/>
         Rosa, It has been many days since I received your letter. How are you? and  what about your family? I am fine by the grace of  Allah. I hope you are in good health. Convey my salaam to your parents. my life is going smooth, what about yours? pray for me. I do pray for you.<br/> 
@@ -576,16 +530,21 @@
         adverb- Quickly, slowly, very well<br/>
         Preposition- On, In, to, under, above,<br/>
         Conjunction- And, With, But, or<br/>
-        Interjection- Wow,<br/><br/>
-        </p>
+        Interjection- Wow,<br/><br/></p>
+    </div>
   </div>
 
   <script>
     function toggleText(id) {
+      // Hide all paragraphs
+      document.querySelectorAll('.text-container p').forEach(p => p.style.display = 'none');
+      // Toggle the visibility of the selected paragraph
       const element = document.getElementById(id);
-      element.style.display = element.style.display === "none" || !element.style.display
-        ? "block"
-        : "none";
+      if (element.style.display === "block") {
+        element.style.display = "none";
+      } else {
+        element.style.display = "block";
+      }
     }
   </script>
 </body>
